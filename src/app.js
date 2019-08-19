@@ -32,8 +32,10 @@ const app = express()
     res.send('Test website homepage')
   })
 
-  app.listen(3000, () => {
-    console.log('listening on 3000 port.');
+
+  const PORT = process.env.PORT || 5000
+  app.listen(PORT, () => {
+    console.log(`listening on ${PORT} port.`);
   })
 })()
 
