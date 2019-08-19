@@ -1,12 +1,9 @@
-const Database = require('better-sqlite3')
-const db = 'order-drink.db'
+const pg = require('pg')
+const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/order-drink'
 
-// init DB
-const sqlite = new Database(db, { verbose: console.log })
-
-
+const client = new pg.Client(connectionString)
+client.connect()
 
 
 
-
-module.exports = exports = sqlite
+module.exports = exports = client
