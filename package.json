@@ -1,0 +1,32 @@
+{
+  "name": "order-drink",
+  "version": "1.0.0",
+  "description": "The backend of the order drink system website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s7130457/order-drink.git"
+  },
+  "keywords": [
+    "express",
+    "backend",
+    "sqlite",
+    "MVC"
+  ],
+  "author": "Jeni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s7130457/order-drink/issues"
+  },
+  "homepage": "https://github.com/s7130457/order-drink#readme",
+  "dependencies": {
+    "better-sqlite3": "^5.4.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "helmet": "^3.20.0"
+  }
+}
