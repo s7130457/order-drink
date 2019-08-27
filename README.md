@@ -9,3 +9,6 @@ order-drink
 npm install
 npm start
 ```
+
+參考資料：
+１. https://www.taniarascia.com/node-express-postgresql-heroku/
