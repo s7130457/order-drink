@@ -1,30 +1,37 @@
-import express from 'express'
-import logger from 'morgan'
+const express = require('express')
+const bodyParser = require('body-parser')
+const logger = require('morgan')
 
 const helmet = require('helmet')
 const session = require('express-session')
 
 const routes = require('./routes/index.route')
-const models = require('./models/index.model')
+const cors = require('cors')
+
+const { pool } = require('./models/config')
+
 
 const app = express()
 
 ;(async () => {
+  app.use(cors())
 
+  app.use(bodyParser.json())
+  app.use(bodyParser.urlencoded({ extended: true }))
 
   app.use(logger('dev'))
   app.use(helmet())
-  app.use(session({
-    secret: 'order-drink',
-    cookie: {
-      secure: false,
-      httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24  // 一天
-    },
-    store: ,
-    resave: false,
-    saveUninitialized: true
-  }))
+  // app.use(session({
+  //   secret: 'order-drink',
+  //   cookie: {
+  //     secure: false,
+  //     httpOnly: true,
+  //     maxAge: 1000 * 60 * 60 * 24  // 一天
+  //   },
+  //   store: ,
+  //   resave: false,
+  //   saveUninitialized: true
+  // }))
 
 
 
